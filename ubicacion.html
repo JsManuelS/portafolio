@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Google Maps Example</title>
+  <style>
+    #map {
+      height: 800px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+    <div style="text-align: center;">
+        <h1>Mi Ubicacion</h1>
+    </div>
+  <div id="map"></div>
+
+  <script>
+    function initMap() {
+      // Coordenadas de la ubicación que deseas mostrar
+      var location = { lat:-11.965488, lng: -77.0940677 };
+
+      // Crea un nuevo mapa centrado en la ubicación
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 14,
+        center: location
+      });
+
+      // Agrega un marcador en la ubicación
+      var marker = new google.maps.Marker({
+        position: location,
+        map: map
+      });
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCebR5MOJqUkmz2zWOaAvx4XXohDGB-xS0&callback=initMap" async defer></script>
+</body>
+</html>
